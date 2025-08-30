@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: radial-gradient(ellipse at bottom, #1b2735 0% #090a0f 100%);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+.stars, .stars::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 
+        50px 100px white, 150px 200px white, 300px 400px white,
+        600px 800px white, 900px 1200px white, 1200px 1500px white,
+        1400px 400px white, 1600px 600px white, 1800px 300px white,
+        200px 1300px white, 400px 1600px white;
+    animation: animarEstrellas 100s linear infinite;
+}
+.stars::after{
+    transform: translateY(-2000px);
+}
+@keyframes animarEstrellas {
+    from {transform: translateY(0);}
+    to {transform: translateY(2000px);}
+}
+.clearfix{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0% auto;
+}
+.columna {
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.6);
+    border-right: 1px solid #444;
+}
+.columna:last-child{
+    border-right: none;
+}
+.foto {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 0 25px 10px #9b59b6;
+    animation: glow 3s infinite alternate;
+}
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px 5px #9b59b6;
+    }
+    to {
+        box-shadow: 0 0 40px 20px #8e44ad;
+    }
+
+}
+h3 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    color:#9b56b6;
+}
+.caja {
+    background: #eee;
+    color: black;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
