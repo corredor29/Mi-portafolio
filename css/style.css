@@ -1,54 +1,83 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background: radial-gradient(ellipse at bottom, #1b2735 0% #090a0f 100%);
+    padding: 0;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     color: white;
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
 }
-.stars, .stars::after{
-    content: "";
+
+.stars, .stars2, .stars3 {
     position: absolute;
     top: 0;
     left: 0;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+}
+
+.stars {
+    box-shadow: 
+        50px 200px white, 100px 400px white, 200px 800px white, 400px 1200px white,
+        600px 1600px white, 800px 300px white, 1000px 900px white, 1200px 1400px white,
+        1400px 100px white, 1600px 700px white, 1800px 500px white, 2000px 1100px white;
+    animation: animStars 100s linear infinite;
+}
+
+.stars2 {
     width: 2px;
     height: 2px;
-    background: transparent;
     box-shadow: 
-        50px 100px white, 150px 200px white, 300px 400px white,
-        600px 800px white, 900px 1200px white, 1200px 1500px white,
-        1400px 400px white, 1600px 600px white, 1800px 300px white,
-        200px 1300px white, 400px 1600px white;
-    animation: animarEstrellas 100s linear infinite;
+        70px 300px white, 150px 600px white, 300px 1000px white, 500px 1400px white,
+        900px 200px white, 1100px 800px white, 1300px 1600px white, 1500px 400px white,
+        1700px 1200px white, 1900px 600px white, 2100px 100px white, 2300px 900px white;
+    animation: animStars 200s linear infinite;
 }
-.stars::after{
-    transform: translateY(-2000px);
+
+.stars3 {
+    width: 3px;
+    height: 3px;
+    box-shadow: 
+        100px 500px white, 300px 1300px white, 700px 700px white, 1200px 300px white,
+        1500px 900px white, 1800px 1500px white, 2000px 400px white, 2200px 1000px white,
+        2400px 200px white, 2600px 600px white, 2800px 1400px white, 3000px 800px white;
+    animation: animStars 300s linear infinite;
 }
-@keyframes animarEstrellas {
-    from {transform: translateY(0);}
-    to {transform: translateY(2000px);}
+
+.stars::after, .stars2::after, .stars3::after {
+    content: "";
+    position: absolute;
+    top: -2000px;
+    width: inherit;
+    height: inherit;
+    box-shadow: inherit;
 }
+
+@keyframes animStars {
+    from { transform: translateY(0); }
+    to   { transform: translateY(2000px); }
+}
+
 .clearfix{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr; 
     width: 100%;
-    max-width: 1200px;
-    margin: 0% auto;
+    min-height: 100vh; 
+    margin: 0;
 }
+
 .columna {
     padding: 20px;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7); 
     border-right: 1px solid #444;
 }
 .columna:last-child{
     border-right: none;
 }
+
 .foto {
     width: 220px;
     height: 220px;
@@ -57,24 +86,31 @@ body {
     border: 3px solid #fff;
     margin: 20px auto;
     display: block;
-    box-shadow: 0 0 25px 10px #9b59b6;
+    box-shadow: 0 0 25px 10px #00e6a1;
     animation: glow 3s infinite alternate;
 }
 @keyframes glow {
-    from {
-        box-shadow: 0 0 20px 5px #9b59b6;
-    }
-    to {
-        box-shadow: 0 0 40px 20px #8e44ad;
-    }
-
+    from { box-shadow: 0 0 20px 5px #00e6a1; }
+    to   { box-shadow: 0 0 40px 20px #00e6a1; }
 }
+
 h3 {
+
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
     margin-top: 20px;
-    color:#9b56b6;
+    color: #00e6a1;
+    text-align: center;
 }
+b {
+    color: #00665e;
+}
+.link{
+    width: 20%;
+    display: block;
+    margin: 0% auto;
+}
+/* CAJAS */
 .caja {
     background: #eee;
     color: black;
@@ -82,4 +118,10 @@ h3 {
     margin: 15px 0;
     border-radius: 8px;
     border: 1px solid #444;
+}
+
+@media (max-width: 900px) {
+    .clearfix {
+        grid-template-columns: 1fr; 
+    }
 }
