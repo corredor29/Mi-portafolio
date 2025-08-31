@@ -95,7 +95,6 @@ body {
 }
 
 h3 {
-
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
     margin-top: 20px;
@@ -105,12 +104,31 @@ h3 {
 b {
     color: #00665e;
 }
-.link{
-    width: 20%;
-    display: block;
-    margin: 0% auto;
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  /* si no caben en una fila se bajan */
+    gap: 30px; 
+    margin-top: 20px;
 }
-/* CAJAS */
+
+.red {
+    text-align: center;
+}
+
+.link {
+    width: 60px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 40%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 0 25px 10px #00e6a1;
+    animation: glow 3s infinite alternate;
+}
+
 .caja {
     background: #eee;
     color: black;
